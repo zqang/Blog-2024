@@ -1,0 +1,56 @@
+<section class="sm:p-20">
+  <div class="px-8 py-8 mx-auto md:px-12 lg:px-22 xl:px-32 max-w-7xl sm:glass">
+    <div
+      class="flex sm:flex-row align-middle justify-center gap-10 flex-col pl-10"
+    >
+      <h2 class="sm:hidden mx-auto">Featured this month</h2>
+      <div class="py-24 overflow-hidden">
+        <h2 class="absolute top-10 hidden sm:block">Featured this month</h2>
+        <app-featured></app-featured>
+      </div>
+      <div
+        class="flex flex-auto flex-col align-middle justify-normal sm:border-l-2 sm:border-gray-300 sm:pl-8"
+      >
+        <h3 class="leading-6 text-black pb-4">Popular Posts</h3>
+        <ol class="max-w-xl">
+          <li>
+            <div class="p-4 bg-white border shadow-lg">
+              <div>
+                <h3 class="text-lg font-medium leading-6 text-black">
+                  Metamask - Is It Really A Wallet?
+                </h3>
+              </div>
+              <div class="inline-flex items-center justify-between w-full mt-4">
+                <div>
+                  <p class="text-sm text-black group-hover:text-blue-500">
+                    Investiments
+                    <span class="text-gray-500"> · </span>
+                    10 min read
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div
+    class="px-8 py-10 mx-auto md:px-12 lg:px-32 max-w-7xl flex flex-col gap-10 align-middle justify-center"
+  >
+    <h2 class="mx-auto">Recent Posts</h2>
+    <ol
+      class="relative grid grid-cols-1 gap-3 lg:grid-cols-2 sm:grid-cols-2"
+      role="list"
+    >
+      <li class="p-2 border bg-gray-100 rounded-3xl">
+        <app-post-card></app-post-card>
+      </li>
+      <li class="p-2 border bg-gray-100 rounded-3xl">
+        <app-post-card></app-post-card>
+      </li>
+    </ol>
+  </div>
+</section>
