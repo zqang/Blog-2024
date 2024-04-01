@@ -4,6 +4,21 @@ module.exports = {
   presets: [],
   darkMode: "media", // or 'class'
   theme: {
+    extend:{
+      keyframes: {
+        animateBlob: {
+          "0%": {
+            borderRadius: "40% 60% 60% 40% / 70% 30% 70% 30%"
+          },
+          "100%": {
+            borderRadius: "40% 60%;",
+          },
+        }
+      },
+      animation: {
+
+      }
+    },
     accentColor: ({ theme }) => ({
       ...theme("colors"),
       auto: "auto",
@@ -14,6 +29,7 @@ module.exports = {
       ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
+      blob: "animateBlob 10s linear infinite alternate",
     },
     aria: {
       busy: 'busy="true"',

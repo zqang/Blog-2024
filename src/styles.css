@@ -12,6 +12,8 @@ body {
   color: #333;
   font-size: 16px;
   line-height: 1.5;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -91,4 +93,104 @@ h6 {
   .glass {
     @apply bg-gray-300 rounded-lg px-8 shadow-lg backdrop-blur-md backdrop-filter bg-opacity-20;
   }
+
+  .image-blob {
+    width: min(max(10rem, 20vw), 250px);
+    height: min(max(10rem, 20vw), 250px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+    background-image: linear-gradient(to bottom right, #00c0ff, #4218b8);
+    box-shadow: -10vmin 10vmin 0 rgba(255, 255, 255, 0.07);
+    @apply animate-blob
+  }
+
+  .image-blob > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  :root {
+    --clr-primary: #2450a8;
+    --clr-body: #333;
+    --clr-bg: #ddd;
+  }
+
+  .search {
+    --size: 60px;
+    border: 2px solid var(--clr-primary);
+    display: flex;
+    border-radius: 100px;
+    overflow: hidden;
+    font-size: 1.25em;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    padding: 3px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .search {
+      transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+  }
+
+  .search__input {
+    border: 0;
+    padding: 0.25em 1em;
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .search__submit {
+    font-size: 1.5rem;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-in-out;
+    width: calc(var(--size) - 10px);
+    height: calc(var(--size) - 10px);
+    color: var(--clr-body);
+    margin-left: auto;
+  }
+
+  .search:focus-within {
+    width: 100%;
+  }
+
+  .search:focus-within .search__input {
+    opacity: 1;
+    z-index: initial;
+    cursor: initial;
+    width: calc(100% - var(--size));
+  }
+
+  .search:focus-within .search__submit {
+    background: var(--clr-primary);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+  }
+
+  .search:focus-within .search__submit:hover,
+  .search:focus-within .search__submit:focus {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65);
+  }
+
 }

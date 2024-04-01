@@ -10,25 +10,57 @@
     class="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0"
   >
     <div class="flex flex-col items-center space-x-2 pt-8">
-      @if (avatar) {
-      <img
-        src="{avatar}"
-        alt="avatar"
-        [width]="192"
-        [height]="192"
-        class="h-48 w-48 rounded-full"
-      />
-      }
+      <div class="flex flex-row image-blob">
+        <img src="assets/2023-09profile.png" alt="avatar" />
+      </div>
       <h3 class="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">
         Alvin Ang Zee Qin
       </h3>
-      <div class="text-gray-500 dark:text-gray-400">Occupation</div>
-      <div class="text-gray-500 dark:text-gray-400">Company</div>
+      <div class="text-gray-500 dark:text-gray-400">
+        ASP .NET Developer | Angular
+      </div>
+      <div class="text-gray-500 dark:text-gray-400">
+        Times Software Pte Ltd, Singapore
+      </div>
       <div class="flex space-x-3 pt-6">
-        <span>icon 1</span>
-        <span>icon 2</span>
-        <span>icon 3</span>
-        <span>icon 4</span>
+        <a href="mailto:alvinang1406@gmail.com" target="_blank"
+          ><ng-icon
+            size="2em"
+            name="ionMail"
+            class="w-5 text-black hover:text-blue-500 md hydrated"
+            role="img"
+            aria-label="mail"
+          ></ng-icon
+        ></a>
+        <a href="https://github.com/zqang" target="_blank"
+          ><ng-icon
+            size="2em"
+            name="ionLogoGithub"
+            class="w-5 text-black hover:text-blue-500 md hydrated"
+            role="img"
+            aria-label="github-logo"
+          ></ng-icon
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/alvin-ang-zee-qin-5886a4117/"
+          target="_blank"
+          ><ng-icon
+            size="2em"
+            name="ionLogoLinkedin"
+            class="w-5 text-black hover:text-blue-500 md hydrated"
+            role="img"
+            aria-label="linkedin-logo"
+          ></ng-icon
+        ></a>
+        <a href="https://wa.me/601162548957" target="_blank"
+          ><ng-icon
+            size="2em"
+            name="ionLogoWhatsapp"
+            class="w-5 text-black hover:text-blue-500 md hydrated"
+            role="img"
+            aria-label="whatsapp-logo"
+          ></ng-icon
+        ></a>
       </div>
     </div>
     <div
