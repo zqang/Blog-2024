@@ -6,6 +6,8 @@ import { HomeComponent } from './features/home/home.component';
 import { BlogComponent } from './features/blog/blog.component';
 import { AboutComponent } from './features/about/about.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { TermsConditionsComponent } from './core/pages/terms-conditions/terms-conditions.component';
+import { PrivacyPolicyComponent } from './core/pages/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
   {
@@ -34,6 +36,14 @@ export const routes: Routes = [
     path: 'error',
     component: ErrorComponent,
     canActivate: [MaintenanceGuard],
+  },
+  {
+    path: 'terms',
+    component: TermsConditionsComponent,
+  },
+  {
+    path: 'privacy',
+    component: PrivacyPolicyComponent,
   },
   {
     path: '**',
