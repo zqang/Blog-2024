@@ -1,0 +1,100 @@
+<section
+  class="main-container flex flex-col align-middle justify-center text-center gap-4"
+>
+  <div class="flex flex-col justify-center align-middle gap-2 text-center">
+    <span class="text-gray-500">Saturday, August 5, 2023</span>
+    <h1>Release of Tailwind Angular Starter Template</h1>
+  </div>
+
+  <div class="flex align-middle justify-center pt-4">
+    <app-user-card></app-user-card>
+  </div>
+  <hr class="border-gray-300 border-[1px] m-2" />
+  <div class="py-10 bg-white rounded-lg p-6 my-5 glass">Content</div>
+  <hr class="border-gray-300 border-[1px] m-2" />
+  <div class="flex flex-row justify-between">
+    <div
+      class="flex flex-row align-middle justify-center gap-2 cursor-pointer hover:underline hover:bg-blue-500 hover:text-white p-2 rounded-lg h-fit"
+    >
+      <span class="m-auto"> Share </span>
+      <ng-icon class="m-auto" name="ionShareSocialOutline" size="18"></ng-icon>
+    </div>
+    <div
+      class="bg-opacity-[0.08] bg-black p-2 rounded-lg h-fit cursor-pointer w-fit flex flex-row gap-1"
+      [class]="{ active: true }"
+    >
+      @if (true) {
+      <ng-icon
+        class="text-[#3a4374]"
+        name="ionThumbsUpOutline"
+        size="18"
+      ></ng-icon>
+      }@else{
+      <ng-icon name="ionThumbsDownOutline" size="18"></ng-icon>
+      }
+      <p
+        [class]="{ active: true }"
+        class="text-sm text-[#3a4374] font-semibold w-fit"
+      >
+        10 votes
+      </p>
+    </div>
+    <!-- <div>Reaction</div> -->
+  </div>
+
+  <div class="bg-white rounded-lg p-6 my-5 glass">
+    <h3 class="text-lg font-bold text-slate-700">10 Comments</h3>
+    <div>
+      @for (item of comments; track item.id) {
+      <app-comment-card [comment]="item"></app-comment-card>
+      @if (item.replies && item.replies.length > 0) {
+      <div class="ml-10">
+        @for (reply of item.replies; track reply.replyingTo) {
+        <app-reply-card [reply]="reply" [comment]="item"></app-reply-card>
+        }
+      </div>
+      } }
+    </div>
+  </div>
+
+  <div class="bg-white rounded-lg p-6 my-5 glass">
+    <form>
+      <h3 class="text-lg font-bold text-slate-700 my-3">Add Comment</h3>
+      <textarea
+        name="comment"
+        id="txtarea-comment"
+        placeholder="Type your comment here"
+        rows="3"
+        class="w-full bg-slate-100 p-4 rounded-lg text-sm my-3"
+        maxlength="255"
+        [(ngModel)]="comment"
+      ></textarea>
+      <div class="flex flex-row align-middle justify-between my-3">
+        <p class="text-sm text-slate-500">255 characters left</p>
+        <button
+          class="bg-blue-500 px-5 py-2 rounded-lg text-white font-bold text-sm md:text-lg"
+          (click)="postComment()"
+        >
+          Post Comment
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div
+    class="uppercase text-gray-500 flex flex-col align-middle justify-start text-start"
+  >
+    Tags
+    <ul class="flex flex-row gap-4 text-blue-500 font-semibold">
+      <li>Nextjs</li>
+      <li>Nextjs</li>
+    </ul>
+  </div>
+
+  <div
+    class="flex flex-row gap-2 align-middle justify-start text-start text-blue-400 hover:text-blue-700 cursor-pointer hover:underline"
+  >
+    <ng-icon name="ionArrowBackOutline" size="24"></ng-icon>
+    Back to the blog
+  </div>
+</section>

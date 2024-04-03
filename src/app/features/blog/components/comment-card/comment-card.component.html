@@ -1,0 +1,47 @@
+<div class="flex flex-row p-4 align-middle justify-start gap-4">
+  <img
+    [ngSrc]="comment.user.image"
+    alt="Profile picture"
+    width="40"
+    height="40"
+    class="rounded-full h-[40px] w-[40px]"
+  />
+  <div class="flex flex-col justify-center align-middle gap-1 w-full">
+    <div class="flex flex-row align-middle justify-between gap-6">
+      <div class="flex flex-col">
+        <div>
+          <h4>{{ comment.user.name }}</h4>
+          <p class="text-sm text-slate-500">
+            {{ "@" + comment.user.username }}
+          </p>
+        </div>
+      </div>
+      <a
+        class="text-[#4661e6] text-sm font-semibold hover:underline cursor-pointer"
+        (click)="toggleReply()"
+      >
+        Reply</a
+      >
+    </div>
+    <p class="text-slate-500">{{ comment.content }}</p>
+    @if (showReplyBox) {
+    <div class="flex flex-row align-middle justify-between gap-4">
+      <textarea
+        name="reply"
+        id="reply"
+        maxlength="255"
+        rows="3"
+        class="w-full bg-slate-100 p-4 rounded-lg text-sm my-3"
+        placeholder="Type your reply here"
+        [(ngModel)]="replyValue"
+      ></textarea>
+      <button
+        class="bg-purple-500 px-6 py-3 rounded-lg text-white font-semibold text-sm h-fit w-fit whitespace-nowrap my-3"
+        (click)="postReply()"
+      >
+        Post Reply
+      </button>
+    </div>
+    }
+  </div>
+</div>

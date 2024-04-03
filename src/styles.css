@@ -90,6 +90,9 @@ h6 {
 }
 
 @layer components {
+  .main-container {
+    @apply mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24;
+  }
   .glass {
     @apply bg-gray-300 rounded-lg px-8 shadow-lg backdrop-blur-md backdrop-filter bg-opacity-20;
   }

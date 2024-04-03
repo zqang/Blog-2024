@@ -12,6 +12,10 @@ import {
   ionSearchOutline,
   ionMenu,
   ionClose,
+  ionArrowBackOutline,
+  ionThumbsUpOutline,
+  ionThumbsDownOutline,
+  ionShareSocialOutline,
 } from '@ng-icons/ionicons';
 import { routes } from './app.routes';
 
@@ -29,6 +33,10 @@ export const appConfig: ApplicationConfig = {
       ionSearchOutline,
       ionMenu,
       ionClose,
+      ionArrowBackOutline,
+      ionThumbsUpOutline,
+      ionThumbsDownOutline,
+      ionShareSocialOutline,
     }),
   ],
 };

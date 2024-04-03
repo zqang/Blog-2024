@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NgIconComponent } from '@ng-icons/core';
+import { PostCardComponent } from './components/post-card/post-card.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [NgIconComponent],
+  imports: [PostCardComponent],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css',
 })

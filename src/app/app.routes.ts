@@ -8,6 +8,7 @@ import { AboutComponent } from './features/about/about.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { TermsConditionsComponent } from './core/pages/terms-conditions/terms-conditions.component';
 import { PrivacyPolicyComponent } from './core/pages/privacy-policy/privacy-policy.component';
+import { BlogDetailComponent } from './features/blog/blog-detail/blog-detail.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,11 @@ export const routes: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
+    canActivate: [MaintenanceGuard],
+  },
+  {
+    path: 'blog/:id',
+    component: BlogDetailComponent,
     canActivate: [MaintenanceGuard],
   },
   {
